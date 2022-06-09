@@ -1,0 +1,206 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled2.ipynb",
+      "provenance": [],
+      "collapsed_sections": [],
+      "authorship_tag": "ABX9TyMr3KKlb2Pc9vGAVlPnxbXf",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/tinashekm/Extended-learning-Portfolio/blob/main/Question%201%20and%202\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 23,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kgLwW0N0wRtK",
+        "outputId": "718723dc-0849-4c2e-9cf3-c7f0add601ee"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "What is your nameTinashe \n",
+            "Good day Tinashe \n",
+            "Which currency do you wish to convert between the United States Dollar and the Japanese YEN?YEN\n",
+            "Please enter the amount that you want to convert 450\n",
+            "Please indicate by typing '1' if you wish to convert United States Dollars or '2' if you wish to covert the Japanese YEN2\n",
+            "Dear Tinashe  you have 4.5 Australian Dollars\n"
+          ]
+        }
+      ],
+      "source": [
+        "name = input (\"What is your name\")\n",
+        "print (\"Good day \" + name)\n",
+        "currency = (input(\"Which currency do you wish to convert between the United States Dollar and the Japanese YEN?\"))\n",
+        "amount = int(input(\"Please enter the amount that you want to convert \"))\n",
+        "unit = int(input (\"Please indicate by typing '1' if you wish to convert United States Dollars or '2' if you wish to covert the Japanese YEN\" ))\n",
+        "\n",
+        "if unit == 1 : \n",
+        "  ConversionToUSD = (amount * (1.38))\n",
+        "  print(f\"Dear {name} you have {ConversionToUSD} Australian Dollars \")\n",
+        "\n",
+        "if unit == 2 : \n",
+        "  ConversionToYEN = amount * (0.010)\n",
+        "  print(f'Dear {name} you have {ConversionToYEN} Australian Dollars')\n",
+        "  \n",
+        "else :\n",
+        " print(\"Sorry, your input is invalid. Please try again.\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import random\n",
+        "def askForGuess(): \n",
+        "  while True:\n",
+        "    guess = input(\"Enter a number: \" )\n",
+        "    if guess.isdecimal():\n",
+        "      return int(guess)\n",
+        "    \n",
+        "secret_number = random.randint(1, 100)\n",
+        "print('I am thinking of a number between 1 and 100')\n",
+        "\n",
+        "for i in range(10):\n",
+        "  print('You have {} guesses left. Take another one. ' .format(10-i))\n",
+        "\n",
+        "  guess = askForGuess()\n",
+        "  if guess == secret_number:\n",
+        "    break\n",
+        "\n",
+        "if guess < secret_number:\n",
+        "    print('Congrats!! You read my mind. That was cool')\n",
+        "else:\n",
+        "    print('Oh No. The number I was thinking of was', secret_number)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UPpWEFtfefpe",
+        "outputId": "3d5d5485-8832-45df-82c2-08e9909e017e"
+      },
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "I am thinking of a number between 1 and 100\n",
+            "You have 10 guesses left. Take another one. \n",
+            "Enter a number: 1\n",
+            "You have 9 guesses left. Take another one. \n",
+            "Enter a number: 53\n",
+            "You have 8 guesses left. Take another one. \n",
+            "Enter a number: 76\n",
+            "You have 7 guesses left. Take another one. \n",
+            "Enter a number: 20\n",
+            "You have 6 guesses left. Take another one. \n",
+            "Enter a number: 63\n",
+            "You have 5 guesses left. Take another one. \n",
+            "Enter a number: 90\n",
+            "You have 4 guesses left. Take another one. \n",
+            "Enter a number: 62\n",
+            "You have 3 guesses left. Take another one. \n",
+            "Enter a number: 100\n",
+            "You have 2 guesses left. Take another one. \n",
+            "Enter a number: 53\n",
+            "You have 1 guesses left. Take another one. \n",
+            "Enter a number: 68\n",
+            "Oh No. The number I was thinking of was 28\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "id": "X5ZQmUp-lAan"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "mystery_num = 7\n",
+        "guess_count = 0\n",
+        "guess_limit = 9\n",
+        "\n",
+        "while guess_count < guess_limit :\n",
+        "  guess = int(input(\"Input a number:\"))\n",
+        "  guess_count +=1 \n",
+        "  if guess> mystery_num :\n",
+        "    print(\"Oops, your number is greater than the secret number. Enter another one\")\n",
+        "  if guess<mystery_num :\n",
+        "    print(\"Oops, your number is lower than the secret number. Enter another one\")\n",
+        "  if guess == mystery_num :\n",
+        "    print(\"Hooray! You have guessed my number\")\n",
+        "    break\n",
+        "else :\n",
+        "     print(\"Sorry you have run out of attempts.\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4ffbkinD08qR",
+        "outputId": "375ca48b-8d0a-43d7-c605-4106cbf56ab8"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Input a number:8\n",
+            "Oops, your number is greater than the secret number. Enter another one\n",
+            "Input a number:5\n",
+            "Oops, your number is lower than the secret number. Enter another one\n",
+            "Input a number:8\n",
+            "Oops, your number is greater than the secret number. Enter another one\n",
+            "Input a number:1\n",
+            "Oops, your number is lower than the secret number. Enter another one\n",
+            "Input a number:2\n",
+            "Oops, your number is lower than the secret number. Enter another one\n",
+            "Input a number:9\n",
+            "Oops, your number is greater than the secret number. Enter another one\n",
+            "Input a number:10\n",
+            "Oops, your number is greater than the secret number. Enter another one\n",
+            "Input a number:11\n",
+            "Oops, your number is greater than the secret number. Enter another one\n",
+            "Input a number:45\n",
+            "Oops, your number is greater than the secret number. Enter another one\n",
+            "Sorry you have run out of attempts.\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
